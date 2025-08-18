@@ -1,0 +1,77 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Para Você 💖</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="floaters" aria-hidden="true" id="floaters"></div>
+
+<header class="container">
+    <div class="tag" id="tagLine">Com carinho</div>
+    <h1 class="title" id="title">Para <span style="color: var(--primary)">Você</span> 💘</h1>
+    <p class="subtitle" id="subtitle">Cada dia ao seu lado é meu favorito. Preparei isso com muito amor, só pra te lembrar do quanto você é especial pra mim.</p>
+    <div class="cta-row">
+        <button class="btn" id="openLetter">Abrir a cartinha 💌</button>
+    </div>
+
+    <div class="countdown" aria-label="Contagem para nosso dia especial">
+        <div class="cd-box"><div class="cd-number" id="dd">--</div><div class="cd-label">dias</div></div>
+        <div class="cd-box"><div class="cd-number" id="hh">--</div><div class="cd-label">horas</div></div>
+        <div class="cd-box"><div class="cd-number" id="mm">--</div><div class="cd-label">minutos</div></div>
+        <div class="cd-box"><div class="cd-number" id="ss">--</div><div class="cd-label">segundos</div></div>
+    </div>
+</header>
+
+<main class="container">
+    <!-- GALERIA -->
+    <section class="section" aria-labelledby="memorias-title">
+        <div class="sec-head">
+            <h2 id="memorias-title" class="sec-title">Algumas Fotos</h2>
+            <p class="sec-desc">Seu sorriso é o mais lindo!</p>
+        </div>
+        <div class="grid" id="gallery">
+            <!-- Cards de fotos gerados via JS -->
+        </div>
+    </section>
+
+    <!-- LINHA DO TEMPO -->
+    <section class="section" aria-labelledby="timeline-title">
+        <div class="sec-head">
+            <h2 id="timeline-title" class="sec-title">Nossa História</h2>
+            <p class="sec-desc">Nossa Timeline!</p>
+        </div>
+        <div class="timeline" id="timeline">
+            <!-- Eventos gerados via JS -->
+        </div>
+    </section>
+</main>
+
+<footer>
+    Feito com MUITO AMOR 💖 de <span id="yourNameFoot"></span> para <span id="yourNameFoot2"></span>!
+</footer>
+
+<!-- MODAL DA CARTA -->
+<div class="modal-backdrop" id="backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+        <header>
+            <h3 id="modal-title">Uma carta para você</h3>
+        </header>
+        <div class="body" id="letterBody"></div>
+        <div class="actions">
+            <button class="btn close" id="closeLetter">Fechar</button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+services:
+  springboot-app:
+    build: .
+    container_name: birthday-springboot-app
+
+  caddy:
+    image: caddy:2
+    ports:
+      - "8080:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile

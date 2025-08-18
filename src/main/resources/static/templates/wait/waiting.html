@@ -1,0 +1,54 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Para Você 💖</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="container">
+    <div class="tag" id="tagLine">Done with kindness</div>
+    <h1 class="title" id="title">Waiting...</h1>
+    <p class="subtitle" id="subtitle">Wait to open site!</p>
+
+    <div class="countdown" aria-label="Contagem para nosso dia especial">
+        <div class="cd-box"><div class="cd-number" id="dd">--</div><div class="cd-label">days</div></div>
+        <div class="cd-box"><div class="cd-number" id="hh">--</div><div class="cd-label">hours</div></div>
+        <div class="cd-box"><div class="cd-number" id="mm">--</div><div class="cd-label">minutes</div></div>
+        <div class="cd-box"><div class="cd-number" id="ss">--</div><div class="cd-label">segunds</div></div>
+    </div>
+</header>
+</body>
+
+<script>
+    const CONFIG = { anniversary: "2025-08-20" }
+
+    const startCountdown = () => {
+        const target = new Date(CONFIG.anniversary + 'T00:00:00');
+        const update = () => {
+            const now = new Date();
+            let diff = Math.max(0, target - now);
+            const s = Math.floor(diff / 1000);
+            const d = Math.floor(s / 86400);
+            const h = Math.floor((s % 86400) / 3600);
+            const m = Math.floor((s % 3600) / 60);
+            const ss = Math.floor(s % 60);
+
+            document.getElementById('dd').textContent = String(d).padStart(2,'0');
+            document.getElementById('hh').textContent = String(h).padStart(2,'0');
+            document.getElementById('mm').textContent = String(m).padStart(2,'0');
+            document.getElementById('ss').textContent = String(ss).padStart(2,'0');
+        };
+        update();
+        setInterval(update, 1000);
+    }
+
+    startCountdown();
+</script>
+
+</html>
