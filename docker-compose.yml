@@ -2,10 +2,28 @@ services:
   springboot-app:
     build: .
     container_name: birthday-springboot-app
+    expose:
+      - "8080"
+    networks:
+      - app-network
 
   caddy:
     image: caddy:2
+    container_name: birthday-caddy
     ports:
       - "8080:80"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - springboot-app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+volumes:
+  caddy_data:
+  caddy_config:
